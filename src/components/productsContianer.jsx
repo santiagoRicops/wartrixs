@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import CardProduct from './ui/productsCard'
-import { getDocs, collection, query, QuerySnapshot } from 'firebase/firestore'
+import { getDocs, collection} from 'firebase/firestore'
 import { db } from '../../firebase'
 import Lupa from './icons/lupa'
 const ProductContainer = () => {
