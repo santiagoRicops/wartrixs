@@ -13,9 +13,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <CartProvider>
         <body className={inter.className}>{children}</body>
-       
       </CartProvider>
-
     </html>
   )
 }

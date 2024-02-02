@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import CardProduct from './ui/productsCard'
-import { getDocs, collection} from 'firebase/firestore'
+import { getDocs, collection } from 'firebase/firestore'
 import { db } from '../../firebase'
 import Lupa from './icons/lupa'
 const ProductContainer = () => {
@@ -17,11 +17,9 @@ const ProductContainer = () => {
         //accediedno a firebase  para tomar los productos
         const querySnapshot = await getDocs(collection(db, 'productos'))
         const productData = querySnapshot.docs.map((doc) => {
-         
           return {
-            id:doc.id, 
-            ...doc.data()
-
+            id: doc.id,
+            ...doc.data(),
           }
         })
         setProducts(productData)
