@@ -37,6 +37,9 @@ devDependencies:
   eslint-config-next:
     specifier: 14.1.0
     version: 14.1.0(eslint@8.56.0)(typescript@5.3.3)
+  husky:
+    specifier: ^9.0.10
+    version: 9.0.10
   postcss:
     specifier: ^8
     version: 8.4.33
@@ -2654,6 +2657,15 @@ packages:
         integrity: sha512-SGeBX54F94Wgu5RH3X5jsDtf4eHyRogWX1XGT3b4HuW3tQPM4AaBzoUji/4AAJNXCEOWZ5O0DgZmJw1947gD5Q==,
       }
     dev: false
+
+  /husky@9.0.10:
+    resolution:
+      {
+        integrity: sha512-TQGNknoiy6bURzIO77pPRu+XHi6zI7T93rX+QnJsoYFf3xdjKOur+IlfqzJGMHIK/wXrLg+GsvMs8Op7vI2jVA==,
+      }
+    engines: { node: '>=18' }
+    hasBin: true
+    dev: true
 
   /idb@7.1.1:
     resolution:
