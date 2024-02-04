@@ -112,28 +112,25 @@ const FromAdmin = () => {
           <div className="m-[20px]">
             <label>
               <input
-                type='file'
+                type="file"
                 name="file Uno"
                 onChange={(e) => setFileUno(e.target.files[0])}
-              
                 placeholder="file Uno"
               />
             </label>
             <label>
               <input
-                type='file'
+                type="file"
                 name="file Dos "
                 onChange={(e) => setFileDos(e.target.files[0])}
-               
                 placeholder="file Dos"
               />
             </label>
             <label>
               <input
-                type='file'
+                type="file"
                 name="file Tres"
                 onChange={(e) => setFileTres(e.target.files[0])}
-               
                 placeholder="file Tres"
               />
             </label>
