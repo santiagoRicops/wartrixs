@@ -7,7 +7,9 @@ import { db } from '../../firebase'
 const FromAdmin = () => {
   const [loading, SetLoading] = useState(false)
   const [bgloading, SetBgloading] = useState(false)
-  const [file, setFile] = useState(null)
+  const [fileUno, setFileUno] = useState(null)
+  const [fileDos, setFileDos] = useState(null)
+  const [fileTres, setFileTres] = useState(null)
   const [productOptions, setProductOptions] = useState({
     title: '',
     precio: Number,
@@ -35,7 +37,7 @@ const FromAdmin = () => {
   const handleSumitFile = async (e) => {
     try {
       e.preventDefault()
-      if (!file) {
+      if (!fileUno && !fileDos && !fileTres) {
         alert('Agrega una imagen -_-')
         return
       }
@@ -46,7 +48,9 @@ const FromAdmin = () => {
         title: productOptions.title,
         description: productOptions.descripcion,
         precio: formatPrice(parseFloat(productOptions.precio)),
-        src: await uploadFile(file),
+        srcUno: await uploadFile(fileUno),
+        srcDos: await uploadFile(fileDos),
+        srcTres: await uploadFile(fileTres),
         stock: productOptions.stock,
         category: productOptions.category,
       }
@@ -108,10 +112,29 @@ const FromAdmin = () => {
           <div className="m-[20px]">
             <label>
               <input
-                type="file"
-                name="file"
-                onChange={(e) => setFile(e.target.files[0])}
-                placeholder="file"
+                type='file'
+                name="file Uno"
+                onChange={(e) => setFileUno(e.target.files[0])}
+              
+                placeholder="file Uno"
+              />
+            </label>
+            <label>
+              <input
+                type='file'
+                name="file Dos "
+                onChange={(e) => setFileDos(e.target.files[0])}
+               
+                placeholder="file Dos"
+              />
+            </label>
+            <label>
+              <input
+                type='file'
+                name="file Tres"
+                onChange={(e) => setFileTres(e.target.files[0])}
+               
+                placeholder="file Tres"
               />
             </label>
           </div>

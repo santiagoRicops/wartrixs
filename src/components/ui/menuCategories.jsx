@@ -1,11 +1,11 @@
 import Image from 'next/image'
-import computaroras from '../../public/computadores.webp'
+import computaroras from '../../../public/computadores.webp'
 
-import accesorios from '../../public/accesorios.webp'
-import watch from '../../public/relojs.webp'
-import movil from '../../public/movil.webp'
+import accesorios from '../../../public/accesorios.webp'
+import watch from '../../../public/relojs.webp'
+import movil from '../../../public/movil.webp'
 
-const MenuImages = () => {
+const MenuCategories = () => {
   return (
     <div className="gap-[30px] flex-wrap flex lg:flex justify-center lg:gap-[50px]">
       <figure className="w-[367px] rounded-[20px] overflow-hidden cursor-pointer relative md:w-[322px] lg:w-[300px] xl:w-[266px] mb-[30px]">
@@ -59,4 +59,4 @@ const MenuImages = () => {
     </div>
   )
 }
-export default MenuImages
+export default MenuCategories

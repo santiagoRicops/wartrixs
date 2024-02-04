@@ -30,7 +30,7 @@ const CardProduct = ({ products, onNavigate }) => {
               <a>
                 <Image
                   className="w-full h-full object-cover transition-transform duration-300 transform hover:scale-105"
-                  src={product.src}
+                  src={product.srcUno}
                   alt="exampleimag"
                   width={256}
                   height={160}

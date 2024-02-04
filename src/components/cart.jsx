@@ -8,7 +8,7 @@ const CartItem = ({
   quantity,
   precio,
   title,
-  src,
+  srcUno,
   addToCart,
   removeFromCart,
   removeFromCartAll,
@@ -19,7 +19,7 @@ const CartItem = ({
     <article className="flex   justify-center gap-[20px] ">
       <div className="w-32  h-32 rounded-md overflow-hidden border-2 border-solid border-white">
         <Image
-          src={src}
+          src={srcUno}
           alt={title}
           width={128}
           height={100}
