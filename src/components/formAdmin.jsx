@@ -109,7 +109,8 @@ const FromAdmin = () => {
               required
             />
           </div>
-          <div className="m-[20px]">
+
+          <div className="m-[20px] flex flex-col gap-[30px]">
             <label>
               <input
                 type="file"
@@ -118,6 +119,7 @@ const FromAdmin = () => {
                 placeholder="file Uno"
               />
             </label>
+
             <label>
               <input
                 type="file"
@@ -135,6 +137,7 @@ const FromAdmin = () => {
               />
             </label>
           </div>
+
           <div className="m-[20px]">
             <label>
               <textarea

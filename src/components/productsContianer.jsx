@@ -4,11 +4,13 @@ import CardProduct from './ui/productsCard'
 import { getDocs, collection } from 'firebase/firestore'
 import { db } from '../../firebase'
 import Lupa from './icons/lupa'
+import Loading from './ui/loading'
 const ProductContainer = () => {
   const [products, setProducts] = useState([])
   const [category, setCategory] = useState([])
   const [selectedCategory, setSelectedCategory] = useState('') // Estado para rastrear la categoría seleccionada
   const [searchValue, setSearchValue] = useState('')
+  const [isLoading, setIsloading] = useState(false)
 
   const [filteredCategory, setFilteredCategory] = useState(null)
   useEffect(() => {
@@ -29,6 +31,7 @@ const ProductContainer = () => {
           new Set(productData.map((products) => products.category)),
         )
         setCategory(uniqueCategories)
+        setIsloading(true)
       } catch (error) {
         console.log(error)
       }
@@ -57,7 +60,7 @@ const ProductContainer = () => {
   }
 
   const filteredProducts = products.filter(filterProducts)
-  return (
+  return isLoading ? (
     <>
       <div className="relative flex justify-center mt-[30px]">
         <input
@@ -68,13 +71,11 @@ const ProductContainer = () => {
         />
         <Lupa />
       </div>
-      {searchValue !== '' && filteredProducts.length === 0 ? (
+      {searchValue !== '' && filteredProducts.length === 0 && (
         <p>
           No hay productos que coincidan con la búsqueda y categoría
           seleccionadas.
         </p>
-      ) : (
-        ''
       )}
 
       <section className="p-[30px] a  mt-[50px] ">
@@ -99,6 +100,8 @@ const ProductContainer = () => {
         </article>
       </section>
     </>
+  ) : (
+    <Loading />
   )
 }
 export default ProductContainer

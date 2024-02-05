@@ -9,7 +9,7 @@ import X from './icons/x'
 
 import Image from 'next/image'
 
-const NavBar = () => {
+const NavBar = ({children}) => {
   const [seeCart, setSeeCart] = useState(false)
 
   const viewCart = () => {
@@ -29,6 +29,7 @@ const NavBar = () => {
       />
 
       <nav className="flex items-center justify-around gap-[10px] xl:gap-[100px]  lg:gap-[30px] md:gap-[20px] ">
+        {children}
         <IconHeadset />
         <div className="flex justify-center m-3 md:block md:m-0">
           <figure className="w-[90px] xl:mr-[0px] md:mr-[30px] cursor-pointer">
