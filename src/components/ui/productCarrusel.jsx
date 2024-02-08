@@ -1,57 +1,57 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import useEmblaCarousel from 'embla-carousel-react';
+import React, { useState, useEffect, useCallback } from 'react'
+import useEmblaCarousel from 'embla-carousel-react'
 import {
   DotButton,
   PrevButton,
-  NextButton
-} from './icons/EmblaCarouselArrowsDotsButtons';
+  NextButton,
+} from '../icons/EmblaCarouselArrowsDotsButtons'
 
-import Image from 'next/image';
-import '../app/globals.css';
+import Image from 'next/image'
+import '../../app/globals.css'
 
-const EmblaCarousel = ({ slides, options, images }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel(options);
-  const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
-  const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [scrollSnaps, setScrollSnaps] = useState([]);
+const ProductCarrusel = ({ slides, options, images }) => {
+  const [emblaRef, emblaApi] = useEmblaCarousel(options)
+  const [prevBtnDisabled, setPrevBtnDisabled] = useState(true)
+  const [nextBtnDisabled, setNextBtnDisabled] = useState(true)
+  const [selectedIndex, setSelectedIndex] = useState(0)
+  const [scrollSnaps, setScrollSnaps] = useState([])
 
   const scrollPrev = useCallback(
     () => emblaApi && emblaApi.scrollPrev(),
-    [emblaApi]
-  );
+    [emblaApi],
+  )
   const scrollNext = useCallback(
     () => emblaApi && emblaApi.scrollNext(),
-    [emblaApi]
-  );
+    [emblaApi],
+  )
   const scrollTo = useCallback(
     (index) => emblaApi && emblaApi.scrollTo(index),
-    [emblaApi]
-  );
+    [emblaApi],
+  )
 
   const onInit = useCallback((emblaApi) => {
-    setScrollSnaps(emblaApi.scrollSnapList());
-  }, []);
+    setScrollSnaps(emblaApi.scrollSnapList())
+  }, [])
 
   const onSelect = useCallback((emblaApi) => {
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-    setPrevBtnDisabled(!emblaApi.canScrollPrev());
-    setNextBtnDisabled(!emblaApi.canScrollNext());
-  }, []);
+    setSelectedIndex(emblaApi.selectedScrollSnap())
+    setPrevBtnDisabled(!emblaApi.canScrollPrev())
+    setNextBtnDisabled(!emblaApi.canScrollNext())
+  }, [])
 
   useEffect(() => {
-    if (!emblaApi) return;
+    if (!emblaApi) return
 
-    onInit(emblaApi);
-    onSelect(emblaApi);
-    emblaApi.on('reInit', onInit);
-    emblaApi.on('reInit', onSelect);
-    emblaApi.on('select', onSelect);
-  }, [emblaApi, onInit, onSelect]);
+    onInit(emblaApi)
+    onSelect(emblaApi)
+    emblaApi.on('reInit', onInit)
+    emblaApi.on('reInit', onSelect)
+    emblaApi.on('select', onSelect)
+  }, [emblaApi, onInit, onSelect])
 
   return (
     <>
-      <div className="embla w-[30%] relative">
+      <div className="embla xl:w-[50%]  lg:w-[30%] md:w-[70%] w-[100%] mb-0 relative">
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container">
             {slides.map((index) => (
@@ -89,13 +89,13 @@ const EmblaCarousel = ({ slides, options, images }) => {
             key={index}
             onClick={() => scrollTo(index)}
             className={'embla__dot'.concat(
-              index === selectedIndex ? ' embla__dot--selected' : ''
+              index === selectedIndex ? ' embla__dot--selected' : '',
             )}
           />
         ))}
       </div>
     </>
-  );
-};
+  )
+}
 
-export default EmblaCarousel;
+export default ProductCarrusel

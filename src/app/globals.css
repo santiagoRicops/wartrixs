@@ -674,12 +674,10 @@ html,
   border-bottom: 4px solid #e67e22;
 }
 
-
-
 .embla {
   --slide-spacing: 1rem;
   --slide-size: 100%;
-  --slide-height: 19rem;
+  --slide-height: 30rem;
   padding: 1.6rem;
 }
 .embla__viewport {
@@ -816,12 +814,17 @@ html,
 }
 .sandbox__carousel {
   position: relative;
- 
 }
 @media (max-width: 749px) {
   .sandbox__carousel {
     border-top: 0.1rem solid var(--detail-low-contrast);
     border-bottom: 0.1rem solid var(--detail-low-contrast);
+  }
+  .embla {
+    --slide-spacing: 1rem;
+    --slide-size: 100%;
+    --slide-height: 19rem;
+    padding: 1.6rem;
   }
 }
 @media (min-width: 750px) {

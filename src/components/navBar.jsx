@@ -8,10 +8,14 @@ import Cart from './cart'
 import X from './icons/x'
 
 import Image from 'next/image'
+import LoginForm from './accountUsers'
 
-const NavBar = ({children}) => {
+const NavBar = ({ children }) => {
   const [seeCart, setSeeCart] = useState(false)
-
+  const [account, setAccount] = useState(false)
+  const toogleSeeAccount = () => {
+    setAccount(!account)
+  }
   const viewCart = () => {
     setSeeCart(true)
   }
@@ -36,7 +40,13 @@ const NavBar = ({children}) => {
             <Image href="/" src={logoWartix} alt="logo Wartix" />
           </figure>
         </div>
-        <IconUser />
+        <IconUser onClick={toogleSeeAccount} />
+        <LoginForm
+          className={`absolute top-[-100%] z-[100] transition-all duration-300 ease-in-out ${
+            account ? 'top-[20%] opacity-100' : 'opacity-0'
+          }`}
+        />
+
         <IconShoppingBang onClick={viewCart} />
       </nav>
     </>

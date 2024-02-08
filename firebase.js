@@ -4,6 +4,8 @@ import { initializeApp } from 'firebase/app'
 import { getDownloadURL, getStorage, ref, uploadBytes } from 'firebase/storage'
 import { getFirestore } from 'firebase/firestore'
 import { v4 } from 'uuid'
+import { GoogleAuthProvider } from 'firebase/auth'
+import { getAuth } from 'firebase/auth'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -25,9 +27,9 @@ const app = initializeApp(firebaseConfig)
 
 const storage = getStorage(app)
 const db = getFirestore(app)
-
+export const provider = new GoogleAuthProvider()
 export { db }
-
+export const auth = getAuth()
 export async function uploadFile(file) {
   const storageRef = ref(storage, v4())
   await uploadBytes(storageRef, file)

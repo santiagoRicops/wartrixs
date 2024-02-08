@@ -1,6 +1,6 @@
-const UserIcon = () => {
+const UserIcon = ({ onClick }) => {
   return (
-    <figure className=" flex items-center cursor-pointer">
+    <figure className=" flex items-center cursor-pointer" onClick={onClick}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="icon icon-tabler icon-tabler-user"

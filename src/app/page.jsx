@@ -4,6 +4,7 @@ import ProductContainer from '@/components/productsContianer'
 import RootLayout from './layout'
 import NavBar from '@/components/navBar'
 import MenuCategories from '@/components/ui/menuCategories'
+
 export const metadata = {
   title: 'Wartrix',
   description: 'Principal',
