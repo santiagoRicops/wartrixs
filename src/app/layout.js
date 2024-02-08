@@ -11,6 +11,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        {/* Agrega la etiqueta script del script de Google AdSense */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9137584732623814"
+          crossOrigin="anonymous"
+        ></script>
+        </head>
       <CartProvider>
         <body className={inter.className}>{children}</body>
       </CartProvider>
