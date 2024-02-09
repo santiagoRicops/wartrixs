@@ -25,8 +25,8 @@ export const AccountProvider = ({ children }) => {
   const SignOff = async () => {
     try {
       await auth.signOut()
-    //   localStorage.removeItem('nameUser')
-      setUserData(null);
+      //   localStorage.removeItem('nameUser')
+      setUserData(null)
       setMyData('')
     } catch (error) {}
   }

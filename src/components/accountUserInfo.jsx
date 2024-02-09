@@ -6,9 +6,7 @@ const AccountInfo = () => {
   return (
     <div className="text-[black]">
       {userData ? (
-        <p className="text-[black]">
-           {userData.displayName || myData}
-        </p>
+        <p className="text-[black]">{userData.displayName || myData}</p>
       ) : (
         ''
       )}

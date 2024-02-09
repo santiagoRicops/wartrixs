@@ -76,7 +76,11 @@ const NavBar = ({ children }) => {
           className={`absolute top-[-100%] z-[100] transition-all duration-300 ease-in-out ${
             accountRegister ? 'top-[20%] opacity-100' : 'opacity-0'
           }`}
-          childrenP={<p onClick={toogleSeeAccountLogin}>Ya tienes cuenta?<b>inicia sesión</b></p>}
+          childrenP={
+            <p onClick={toogleSeeAccountLogin}>
+              Ya tienes cuenta?<b>inicia sesión</b>
+            </p>
+          }
         >
           <X className=" mt-[-10px]" onClick={toogleSeeAccountRegister} />
         </Registerform>
