@@ -1,9 +1,9 @@
-const X = ({ onClick }) => {
+const X = ({ onClick, className }) => {
   return (
     <svg
       onClick={onClick}
       xmlns="http://www.w3.org/2000/svg"
-      className="cursor-pointer m-[15px] icon icon-tabler icon-tabler-x"
+      className={` ${className} cursor-pointer m-[15px] icon icon-tabler icon-tabler-x`}
       width="27"
       height="27"
       viewBox="0 0 24 24"

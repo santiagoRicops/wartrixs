@@ -3,7 +3,7 @@ const Headset = () => {
     <figure className="hidden  lg:flex items-center cursor-pointer ">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="icon icon-tabler icon-tabler-headset"
+        className="icon icon-tabler icon-tabler-headset"
         width="32"
         height="32"
         viewBox="0 0 24 24"
