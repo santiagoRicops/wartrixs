@@ -15,10 +15,16 @@ const RegisterForm = ({ className, children, childrenP }) => {
     name: '',
     password: '',
   })
+  const [shippingData, setShippingData] = useState({
+    number: '',
+    address: '',
+    city: '',
+  })
 
   const handleChange = (e) => {
     const { name, value } = e.target
     setRegisterEmail((prev) => ({ ...prev, [name]: value }))
+    setShippingData((prev) => ({ ...prev, [name]: value }))
   }
 
   const registerUserGoogle = async (e) => {
@@ -26,7 +32,10 @@ const RegisterForm = ({ className, children, childrenP }) => {
       e.preventDefault()
       const register = await signInWithPopup(auth, provider)
       const dataUser = register.user.email
+
       localStorage.setItem('users', dataUser)
+
+      // Convertir la cadena JSON a objeto al mostrarla en la consola
     } catch (error) {
       showNotification('no se ha podido registrar')
     }
@@ -51,6 +60,20 @@ const RegisterForm = ({ className, children, childrenP }) => {
     setTimeout(() => {
       setNotification(null)
     }, 3000)
+    const shippingInfo = {
+      number: shippingData.number,
+      address: shippingData.address,
+      city: shippingData.city,
+    }
+
+    // Convertir el nuevo objeto a cadena JSON antes de guardarlo
+    const shippingInfoString = JSON.stringify(shippingInfo)
+
+    // Almacenar solo la información relevante en el localStorage
+    localStorage.setItem('sendAddress', shippingInfoString)
+
+    // Mostrar solo la información relevante en la consola
+    console.log(JSON.parse(localStorage.getItem('sendAddress')))
   }
   return (
     <>
@@ -107,6 +130,48 @@ const RegisterForm = ({ className, children, childrenP }) => {
             value={registerEmail.password}
             onChange={handleChange}
             name="password"
+          />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="number" className="block text-gray-700 font-medium">
+            numero de telefono
+          </label>
+          <input
+            type="text"
+            id="number"
+            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+            placeholder="Ingresa tu numero telefonic"
+            value={shippingData.number}
+            onChange={handleChange}
+            name="number"
+          />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="address" className="block text-gray-700 font-medium">
+            direccion de envios
+          </label>
+          <input
+            type="text"
+            id="address"
+            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+            placeholder="ingresa la direcion de envios"
+            value={shippingData.address}
+            onChange={handleChange}
+            name="address"
+          />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="city" className="block text-gray-700 font-medium">
+            ciudad
+          </label>
+          <input
+            type="text"
+            id="city"
+            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+            placeholder="ingresa la direcion tu ciudad"
+            value={shippingData.city}
+            onChange={handleChange}
+            name="city"
           />
         </div>
 

@@ -74,7 +74,7 @@ const NavBar = ({ children }) => {
         </FormSignIn>
         <Registerform
           className={`absolute top-[-100%] z-[100] transition-all duration-300 ease-in-out ${
-            accountRegister ? 'top-[20%] opacity-100' : 'opacity-0'
+            accountRegister ? 'top-[5%] opacity-100' : 'opacity-0'
           }`}
           childrenP={
             <p onClick={toogleSeeAccountLogin}>

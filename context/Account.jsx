@@ -7,21 +7,25 @@ import { auth } from '../firebase'
 export const AccountContext = createContext()
 
 export const AccountProvider = ({ children }) => {
-  const [userData, setUserData] = useState('')
   const [myData, setMyData] = useState('')
+  const [sendAddress, setSendAddress] = useState('')
+  const [userData, setUserData] = useState('')
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         const storedData = localStorage.getItem('nameUser')
+        const sendAddress = localStorage.getItem('sendAddress')
+
         setMyData(storedData)
         setUserData(user)
-      } else {
-        console.log('No hay usuarios registrados')
+        setSendAddress(sendAddress)
       }
     })
 
     return () => unsubscribe()
   }, [])
+
   const SignOff = async () => {
     try {
       await auth.signOut()
@@ -31,7 +35,7 @@ export const AccountProvider = ({ children }) => {
     } catch (error) {}
   }
   return (
-    <AccountContext.Provider value={{ userData, myData, SignOff }}>
+    <AccountContext.Provider value={{ userData, myData, SignOff, sendAddress }}>
       {children}
     </AccountContext.Provider>
   )
