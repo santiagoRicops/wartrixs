@@ -96,7 +96,10 @@ const NavBar = ({ children }) => {
                 userInfo ? 'top-[20%]  opacity-100' : 'opacity-0'
               }`}
             >
-               <X className="absolute top-[1%] right-[10%]" onClick={toogleUserInfo} />
+              <X
+                className="absolute top-[1%] right-[10%]"
+                onClick={toogleUserInfo}
+              />
               <button
                 className="bg-[#cca826] text-white border-none px-5 py-2 rounded-full hover:bg-[#b0851e] transition duration-300 mb-2 relative  flex items-center justify-center overflow-hidden group mt-[20px]"
                 onClick={SignOff}
