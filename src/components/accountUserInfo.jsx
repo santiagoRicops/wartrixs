@@ -1,11 +1,11 @@
 import { useAccount } from '../../hooks/useAccount'
 
-const AccountInfo = () => {
+const AccountInfo = ({className, children}) => {
   const { userData, myData, SignOff, sendAddress } = useAccount()
   const useAddress = JSON.parse(sendAddress)
   console.log(useAddress)
   return (
-    <article className="bg-white p-6 rounded-lg shadow-md transition duration-300 transform hover:scale-105 hover:shadow-lg">
+    <article className={`bg-white p-6 rounded-lg shadow-md transition duration-300 transform hover:scale-105 hover:shadow-lg ${className}`}>
       <h2 className="text-3xl mb-4 text-[black] font-bold">
         ¡Hola, {userData?.displayName || myData}!
       </h2>
@@ -35,6 +35,7 @@ const AccountInfo = () => {
           <p className="text-gray-700">santiagoricopassop@gmail.com</p>
         </div>
       </div>
+      {children}
     </article>
   )
 }
