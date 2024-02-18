@@ -26,9 +26,9 @@ const NavBar = ({ children }) => {
   const toogleSeeAccountRegister = () => {
     setAccountRegister(!accountRegister)
   }
- const toogleUserInfo = ()=>{
-  setUserInfo(!userInfo)
- }
+  const toogleUserInfo = () => {
+    setUserInfo(!userInfo)
+  }
   const viewCart = () => {
     setSeeCart(true)
   }
@@ -54,8 +54,8 @@ const NavBar = ({ children }) => {
             <Image href="/" src={logoWartix} alt="logo Wartix" />
           </figure>
         </div>
-        <IconUser onClick={toogleUserInfo}/>
-        {accountLogin || accountRegister ? (
+        <IconUser onClick={toogleUserInfo} />
+        {accountLogin || accountRegister || userInfo ? (
           <div className="absolute w-[100%] h-[100%] top-0 left-0 bg-[#00000054] z-[3]"></div>
         ) : (
           ''
@@ -91,14 +91,27 @@ const NavBar = ({ children }) => {
         <IconShoppingBang onClick={viewCart} />
         {userData && myData ? (
           <>
-            <AccountInfo  className={`absolute top-[-100%] z-[100] transition-all duration-300 ease-in-out ${
-            userInfo ? 'top-[5%] opacity-100' : 'opacity-0'
-          }`}>
-            <button   className="bg-[#cca826] text-white border-none px-5 py-2 rounded-full hover:bg-[#b0851e] transition duration-300 mb-2 relative  flex items-center justify-center overflow-hidden group mt-[20px]" onClick={SignOff}>cerrar sesión</button>
+            <AccountInfo
+              className={`absolute p-[50px] top-[-100%] z-[100] transition-all duration-300 ease-in-out ${
+                userInfo ? 'top-[20%]  opacity-100' : 'opacity-0'
+              }`}
+            >
+               <X className="absolute top-[1%] right-[10%]" onClick={toogleUserInfo} />
+              <button
+                className="bg-[#cca826] text-white border-none px-5 py-2 rounded-full hover:bg-[#b0851e] transition duration-300 mb-2 relative  flex items-center justify-center overflow-hidden group mt-[20px]"
+                onClick={SignOff}
+              >
+                cerrar sesión
+              </button>
             </AccountInfo>
           </>
         ) : (
-          <button   className=" bg-[#cca826] text-white border-none px-5 py-2 rounded-full hover:bg-[#b0851e] transition duration-300  relative  flex items-center justify-center overflow-hidden group"  onClick={toogleSeeAccountLogin}>iniciar sesión</button>
+          <button
+            className=" bg-[#cca826] text-white border-none px-5 py-2 rounded-full hover:bg-[#b0851e] transition duration-300  relative  flex items-center justify-center overflow-hidden group"
+            onClick={toogleSeeAccountLogin}
+          >
+            iniciar sesión
+          </button>
         )}
       </nav>
     </>
