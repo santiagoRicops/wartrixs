@@ -21,12 +21,12 @@ const NavBar = ({ children }) => {
 
   const toogleSeeAccountLogin = () => {
     setAccountLogin(!accountLogin)
-    setAccountRegister(false)  // Asegurarse de que al abrir el login, el registro se cierre
+    setAccountRegister(false) // Asegurarse de que al abrir el login, el registro se cierre
   }
 
   const toogleSeeAccountRegister = () => {
     setAccountRegister(!accountRegister)
-    setAccountLogin(false)  // Asegurarse de que al abrir el registro, el login se cierre
+    setAccountLogin(false) // Asegurarse de que al abrir el registro, el login se cierre
   }
 
   const toogleUserInfo = () => {
@@ -58,8 +58,15 @@ const NavBar = ({ children }) => {
             <Image href="/" src={logoWartix} alt="logo Wartix" />
           </figure>
         </div>
-        <IconUser onClick={() => { toogleUserInfo(); toogleSeeAccountRegister(); }} />
-        {(accountLogin || accountRegister || (userInfo && userData && myData)) && (
+        <IconUser
+          onClick={() => {
+            toogleUserInfo()
+            toogleSeeAccountRegister()
+          }}
+        />
+        {(accountLogin ||
+          accountRegister ||
+          (userInfo && userData && myData)) && (
           <div className="absolute w-[100%] h-[100%] top-0 left-0 bg-[#00000054] z-[3]"></div>
         )}
 
@@ -68,7 +75,10 @@ const NavBar = ({ children }) => {
             accountLogin ? 'top-[20%] opacity-100' : 'opacity-0'
           }`}
           childrenP={
-            <p className='cursor-pointer m-[10px]' onClick={toogleSeeAccountRegister}>
+            <p
+              className="cursor-pointer m-[10px]"
+              onClick={toogleSeeAccountRegister}
+            >
               No tienes cuenta? <b>¡Crea Una!</b>
             </p>
           }
@@ -81,7 +91,10 @@ const NavBar = ({ children }) => {
             accountRegister ? 'top-[1%] opacity-100' : 'opacity-0'
           }`}
           childrenP={
-            <p className='cursor-pointer m-[10px]' onClick={toogleSeeAccountLogin}>
+            <p
+              className="cursor-pointer m-[10px]"
+              onClick={toogleSeeAccountLogin}
+            >
               Ya tienes cuenta? <b>¡Inicia sesión!</b>
             </p>
           }
@@ -96,7 +109,10 @@ const NavBar = ({ children }) => {
               userInfo ? 'top-[20%]  opacity-100' : 'opacity-0'
             }`}
           >
-            <X className="absolute top-[1%] right-[10%]" onClick={toogleUserInfo} />
+            <X
+              className="absolute top-[1%] right-[10%]"
+              onClick={toogleUserInfo}
+            />
             <button
               className="bg-[#cca826] text-white border-none px-5 py-2 rounded-full hover:bg-[#b0851e] transition duration-300 mb-2 relative  flex items-center justify-center overflow-hidden group mt-[20px]"
               onClick={SignOff}

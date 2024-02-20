@@ -20,7 +20,7 @@ export default function Home() {
       <main className="p-[30px] md:p-[50px] relative ">
         <MenuCategories />
         <ProductContainer />
-        <HomeCaruselProducts/>
+        <HomeCaruselProducts />
       </main>
     </RootLayout>
   )
