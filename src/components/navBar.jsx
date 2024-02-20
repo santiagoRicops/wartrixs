@@ -14,21 +14,25 @@ import { useAccount } from '../../hooks/useAccount'
 
 const NavBar = ({ children }) => {
   const [seeCart, setSeeCart] = useState(false)
+  const [userInfo, setUserInfo] = useState(false)
   const [accountLogin, setAccountLogin] = useState(false)
   const [accountRegister, setAccountRegister] = useState(false)
-  const [userInfo, setUserInfo] = useState(false)
   const { userData, myData, SignOff } = useAccount()
 
   const toogleSeeAccountLogin = () => {
     setAccountLogin(!accountLogin)
+    setAccountRegister(false)  // Asegurarse de que al abrir el login, el registro se cierre
   }
 
   const toogleSeeAccountRegister = () => {
     setAccountRegister(!accountRegister)
+    setAccountLogin(false)  // Asegurarse de que al abrir el registro, el login se cierre
   }
+
   const toogleUserInfo = () => {
     setUserInfo(!userInfo)
   }
+
   const viewCart = () => {
     setSeeCart(true)
   }
@@ -54,34 +58,31 @@ const NavBar = ({ children }) => {
             <Image href="/" src={logoWartix} alt="logo Wartix" />
           </figure>
         </div>
-        <IconUser onClick={toogleUserInfo} />
-        {accountLogin || accountRegister || userInfo ? (
+        <IconUser onClick={() => { toogleUserInfo(); toogleSeeAccountRegister(); }} />
+        {(accountLogin || accountRegister || (userInfo && userData && myData)) && (
           <div className="absolute w-[100%] h-[100%] top-0 left-0 bg-[#00000054] z-[3]"></div>
-        ) : (
-          ''
         )}
-
-        {accountRegister && accountLogin && setAccountLogin(false)}
 
         <FormSignIn
           className={`absolute top-[-100%] z-[100] transition-all duration-300 ease-in-out ${
             accountLogin ? 'top-[20%] opacity-100' : 'opacity-0'
           }`}
           childrenP={
-            <p onClick={toogleSeeAccountRegister}>
-              no tienes cuenta?<b>Crea Una</b>
+            <p className='cursor-pointer m-[10px]' onClick={toogleSeeAccountRegister}>
+              No tienes cuenta? <b>¡Crea Una!</b>
             </p>
           }
         >
           <X className=" mt-[-10px]" onClick={toogleSeeAccountLogin} />
         </FormSignIn>
+
         <Registerform
           className={`absolute top-[-100%] z-[100] transition-all duration-300 ease-in-out ${
-            accountRegister ? 'top-[5%] opacity-100' : 'opacity-0'
+            accountRegister ? 'top-[1%] opacity-100' : 'opacity-0'
           }`}
           childrenP={
-            <p onClick={toogleSeeAccountLogin}>
-              Ya tienes cuenta?<b>inicia sesión</b>
+            <p className='cursor-pointer m-[10px]' onClick={toogleSeeAccountLogin}>
+              Ya tienes cuenta? <b>¡Inicia sesión!</b>
             </p>
           }
         >
@@ -90,31 +91,21 @@ const NavBar = ({ children }) => {
 
         <IconShoppingBang onClick={viewCart} />
         {userData && myData ? (
-          <>
-            <AccountInfo
-              className={`absolute p-[50px] top-[-100%] z-[100] transition-all duration-300 ease-in-out ${
-                userInfo ? 'top-[20%]  opacity-100' : 'opacity-0'
-              }`}
-            >
-              <X
-                className="absolute top-[1%] right-[10%]"
-                onClick={toogleUserInfo}
-              />
-              <button
-                className="bg-[#cca826] text-white border-none px-5 py-2 rounded-full hover:bg-[#b0851e] transition duration-300 mb-2 relative  flex items-center justify-center overflow-hidden group mt-[20px]"
-                onClick={SignOff}
-              >
-                cerrar sesión
-              </button>
-            </AccountInfo>
-          </>
-        ) : (
-          <button
-            className=" bg-[#cca826] text-white border-none px-5 py-2 rounded-full hover:bg-[#b0851e] transition duration-300  relative  flex items-center justify-center overflow-hidden group"
-            onClick={toogleSeeAccountLogin}
+          <AccountInfo
+            className={`absolute p-[50px] top-[-100%] z-[100] transition-all duration-300 ease-in-out ${
+              userInfo ? 'top-[20%]  opacity-100' : 'opacity-0'
+            }`}
           >
-            iniciar sesión
-          </button>
+            <X className="absolute top-[1%] right-[10%]" onClick={toogleUserInfo} />
+            <button
+              className="bg-[#cca826] text-white border-none px-5 py-2 rounded-full hover:bg-[#b0851e] transition duration-300 mb-2 relative  flex items-center justify-center overflow-hidden group mt-[20px]"
+              onClick={SignOff}
+            >
+              Cerrar sesión
+            </button>
+          </AccountInfo>
+        ) : (
+          ''
         )}
       </nav>
     </>

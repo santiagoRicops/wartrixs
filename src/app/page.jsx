@@ -4,6 +4,7 @@ import ProductContainer from '@/components/productsContianer'
 import RootLayout from './layout'
 import NavBar from '@/components/navBar'
 import MenuCategories from '@/components/ui/menuCategories'
+import HomeCaruselProducts from '@/components/homeCaruselProducts'
 
 export const metadata = {
   title: 'Wartrix',
@@ -19,6 +20,7 @@ export default function Home() {
       <main className="p-[30px] md:p-[50px] relative ">
         <MenuCategories />
         <ProductContainer />
+        <HomeCaruselProducts/>
       </main>
     </RootLayout>
   )
