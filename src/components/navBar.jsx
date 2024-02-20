@@ -64,10 +64,9 @@ const NavBar = ({ children }) => {
             toogleSeeAccountRegister()
           }}
         />
-      {(accountLogin || (userInfo && userData && myData)) && (
-  <div className="absolute w-[100%] h-[100%] top-0 left-0 bg-[#00000054] z-[3]"></div>
-)}
-
+        {(accountLogin || (userInfo && userData && myData)) && (
+          <div className="absolute w-[100%] h-[100%] top-0 left-0 bg-[#00000054] z-[3]"></div>
+        )}
 
         <FormSignIn
           className={`absolute top-[-100%] z-[100] transition-all duration-300 ease-in-out ${
