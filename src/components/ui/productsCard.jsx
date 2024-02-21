@@ -24,7 +24,7 @@ const CardProduct = ({ products, onNavigate }) => {
       {products.map((product, i) => (
         <LazyLoad height={300} offset={100} key={i}>
           <article
-            className="bg-[#fef8f0] p-4 rounded-lg shadow-md hover:shadow-lg transition-transform duration-300 transform hover:scale-105 w-64"
+            className="bg-[#fef8f0] p-4 rounded-lg shadow-md hover:shadow-lg transition-transform duration-300 transform hover:scale-105 w-[330px]"
             id={product.category}
           >
             <div className="relative h-40 overflow-hidden rounded-lg mb-4">

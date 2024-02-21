@@ -17,9 +17,9 @@ export default function Home() {
         <NavBar />
       </header>
       <Baner />
-      <main className="p-[30px] md:p-[50px] relative ">
+      <main className=" xl:p-0 lg:p-0 md:p-0  relative ">
         <MenuCategories />
-        <ProductContainer />
+        {/* <ProductContainer /> */}
         <HomeCaruselProducts />
       </main>
     </RootLayout>
