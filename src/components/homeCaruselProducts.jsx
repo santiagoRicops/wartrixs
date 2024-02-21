@@ -34,7 +34,7 @@ const HomeCaruselProducts = () => {
   }, [emblaApi])
   return (
     <>
-      <section className=" justify-center items-center relative w-[100%]">
+      <section className="">
         <button
           className="embla__prev w-[100px] h-[50px] m-[10px] bg-slate-600"
           onClick={scrollPrev}
@@ -48,7 +48,7 @@ const HomeCaruselProducts = () => {
           Next
         </button>
         <div ref={emblaRef} className="embla__viewport">
-          <div className="embla__container flex p-[100px]">
+          <div className="embla__container flex gap-[40px] p-[100px]">
             <CardProduct products={products} />
           </div>
         </div>

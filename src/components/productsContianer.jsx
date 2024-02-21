@@ -78,7 +78,7 @@ const ProductContainer = () => {
         </p>
       )}
 
-      <section className="p-[30px] a  mt-[50px] ">
+      <section className="p-[30px]   mt-[50px] ">
         <div className="flex justify-center gap-[20px] items-start">
           <p className=" text-gray-600 mt-[-5px]  text-[20px]">filtrar: </p>
           <select
