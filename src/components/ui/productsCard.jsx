@@ -39,6 +39,7 @@ const CardProduct = ({ products, onNavigate }) => {
                   height={160}
                 />
               </Link>
+              
             </div>
             <div className="mb-4">
               <h3 className="text-lg font-semibold text-[#3a220e]">
