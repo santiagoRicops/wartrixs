@@ -8,7 +8,9 @@ import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 const HomeCaruselProducts = () => {
   const [products, setProducts] = useState([])
-  const [emblaRef, emblaApi] = useEmblaCarousel()
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
+    Autoplay({ delay: 4000 }),
+  ])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,7 +35,18 @@ const HomeCaruselProducts = () => {
   return (
     <>
       <section className="">
-       
+        <button
+          className=" w-[100px] h-[50px] m-[10px] bg-slate-600"
+          onClick={scrollPrev}
+        >
+          Prev
+        </button>
+        <button
+          className=" w-[100px] h-[50px] m-[10px] bg-slate-600"
+          onClick={scrollNext}
+        >
+          Next
+        </button>
         <div ref={emblaRef} className="overflow-hidden">
           <div className=" flex gap-[40px] p-[100px]">
             <CardProduct products={products} />
