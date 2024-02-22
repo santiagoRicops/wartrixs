@@ -34,19 +34,19 @@ const HomeCaruselProducts = () => {
     <>
       <section className="">
         <button
-          className="embla__prev w-[100px] h-[50px] m-[10px] bg-slate-600"
+          className=" w-[100px] h-[50px] m-[10px] bg-slate-600"
           onClick={scrollPrev}
         >
           Prev
         </button>
         <button
-          className="embla__next w-[100px] h-[50px] m-[10px] bg-slate-600"
+          className=" w-[100px] h-[50px] m-[10px] bg-slate-600"
           onClick={scrollNext}
         >
           Next
         </button>
-        <div ref={emblaRef} className="embla__viewport">
-          <div className="embla__container flex gap-[40px] p-[100px]">
+        <div ref={emblaRef} className="overflow-hidden">
+          <div className=" flex gap-[40px] p-[100px]">
             <CardProduct products={products} />
           </div>
         </div>
