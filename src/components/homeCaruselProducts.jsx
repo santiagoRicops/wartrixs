@@ -9,7 +9,6 @@ import Autoplay from 'embla-carousel-autoplay'
 const HomeCaruselProducts = () => {
   const [products, setProducts] = useState([])
   const [emblaRef, emblaApi] = useEmblaCarousel()
-  
 
   useEffect(() => {
     const fetchData = async () => {
