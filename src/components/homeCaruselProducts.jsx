@@ -34,30 +34,10 @@ const HomeCaruselProducts = () => {
   }, [emblaApi])
   return (
     <>
-      <section className="">
-        <button
-          className=" w-[100px] h-[50px] m-[10px] bg-slate-600"
-          onClick={scrollPrev}
-        >
-          Prev
-        </button>
-        <button
-          className=" w-[100px] h-[50px] m-[10px] bg-slate-600"
-          onClick={scrollNext}
-        >
-          Next
-        </button>
-        <div ref={emblaRef} className="overflow-hidden">
-          <div className=" flex gap-[40px] p-[100px]">
-            {products.map((products, i)=>{
-              <article key={i}>
-                <CardProduct products={products}/>
-              </article>
-
-            })}
+      <section className=" overflow-hidden" ref={emblaRef}>
+        <div className='flex '>
             <CardProduct products={products} />
-          </div>
-        </div>
+            </div>
       </section>
     </>
   )
