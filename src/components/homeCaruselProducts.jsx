@@ -18,20 +18,17 @@ const HomeCaruselProducts = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-       
         const querySnapshot = await getDocs(collection(db, 'productos'))
         const productsData = querySnapshot.docs.map((doc) => ({
           ...doc.data(),
           id: doc.id,
-        }));
+        }))
         setProducts(productsData)
-   
-        
       } catch (error) {
         console.error('Error fetching data:', error)
       }
     }
-   
+
     fetchData()
   }, [])
   const scrollPrev = useCallback(() => {
