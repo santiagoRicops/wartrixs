@@ -49,6 +49,12 @@ const HomeCaruselProducts = () => {
         </button>
         <div ref={emblaRef} className="overflow-hidden">
           <div className=" flex gap-[40px] p-[100px]">
+            {products.map((products, i)=>{
+              <article key={i}>
+                <CardProduct products={products}/>
+              </article>
+
+            })}
             <CardProduct products={products} />
           </div>
         </div>
