@@ -12,7 +12,7 @@ import NavBar from '@/components/navBar'
 import ArrowBack from '@/components/icons/arrowBack'
 import Link from 'next/link'
 import Alert from '@/components/ui/notificacion'
-import EmblaCarousel from '@/components/ui/productCarrusel'
+import ProductCarrusel from '@/components/ui/productCarrusel'
 const DetailsProducts = () => {
   const OPTIONS = {} // Agrega opciones según sea necesario
   const SLIDE_COUNT = 3
@@ -64,11 +64,11 @@ const DetailsProducts = () => {
       </header>
       <Alert notification={notification} />
       <section className="flex flex-wrap xl:gap-[100px] lg:gap-[100px] md:gap-[40px] justify-center items-center h-[100vh]">
-        <EmblaCarousel
+        <ProductCarrusel
           slides={SLIDES}
           options={OPTIONS}
           images={[productData.srcUno, productData.srcDos, productData.srcTres]}
-          className="rounded-md shadow-lg"
+          className="rounded-[100px] shadow-lg"
         />
 
         <article className="bg-white p-8 rounded-md shadow-lg max-w-md">

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import computaroras from '../../../public/computadores.webp'
-
+import Link from 'next/link'
 import accesorios from '../../../public/accesorios.webp'
 import watch from '../../../public/relojs.webp'
 import movil from '../../../public/movil.webp'
@@ -9,13 +9,14 @@ const MenuCategories = () => {
   return (
     <div className="gap-[30px] flex-wrap flex lg:flex justify-center lg:gap-[50px] p-[20px]">
       <figure className="w-[367px] rounded-[20px] overflow-hidden cursor-pointer relative md:w-[322px] lg:w-[300px] xl:w-[266px] mb-[30px]">
-        <Image
-          className="mx-auto transform transition-transform hover:scale-105 duration-300 "
-          src={watch}
-          alt="Watch"
-          priority={false}
-        />
-
+        <Link href={'/wachts'}>
+          <Image
+            className="mx-auto transform transition-transform hover:scale-105 duration-300 "
+            src={watch}
+            alt="Watch"
+            priority={false}
+          />
+        </Link>
         <span className="absolute top-[50%] text-[#be9b9b] text-[50px]  xl:text-[35px] font-medium p-[10px] filter ">
           Watchs
         </span>
