@@ -27,7 +27,7 @@ const A = () => {
 
   const filterWatches = () => {
     const filteredProducts = productData.filter(
-      (product) => product.category === "No sé",
+      (product) => product.category === 'No sé',
     )
     console.log('Filtered Products:', filteredProducts)
     return filteredProducts

@@ -6,10 +6,13 @@ import LazyLoad from 'react-lazyload'
 import Alert from './notificacion'
 import Link from 'next/link'
 import ButtonCart from './buttonCart'
-
-const CardProduct = ({ products, onNavigate }) => {
+import { usePath } from '../../../hooks/usePath'
+const CardProduct = ({ products }) => {
   const { addToCart } = useCart()
+
   const [notification, setNotification] = useState(null)
+  const partPath = usePath()
+
 
   const showNotification = (message) => {
     setNotification(message)
@@ -17,7 +20,7 @@ const CardProduct = ({ products, onNavigate }) => {
       setNotification(null)
     }, 3000)
   }
-
+const a = partPath == '/' ? '/products' : partPath
   return (
     <>
       <Alert notification={notification} />
@@ -29,7 +32,7 @@ const CardProduct = ({ products, onNavigate }) => {
           >
             <div className="relative h-40 overflow-hidden rounded-lg mb-4">
               <Link
-                href={`/products/${product.title.toLowerCase()}-${product.id}`}
+                href={`products/ ${a} ${product.title.toLowerCase()}-${product.id}`}
               >
                 <Image
                   className="w-full h-full object-cover transition-transform duration-300 transform hover:scale-105"

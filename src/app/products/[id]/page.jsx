@@ -13,7 +13,10 @@ import ArrowBack from '@/components/icons/arrowBack'
 import Link from 'next/link'
 import Alert from '@/components/ui/notificacion'
 import ProductCarrusel from '@/components/ui/productCarrusel'
+import  {usePath}  from '../../../../hooks/usePath'
 const DetailsProducts = () => {
+  const partPath = usePath()
+ 
   const OPTIONS = {} // Agrega opciones según sea necesario
   const SLIDE_COUNT = 3
   const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
@@ -49,13 +52,17 @@ const DetailsProducts = () => {
       setNotification(null)
     }, 3000)
   }
+  const containsWachts = partPath.toLowerCase().indexOf('wachts') !== -1;
+
+
+  console.log(containsWachts);
   return isLoading ? (
     <>
       <header className="p-[25px]  md:flex  md:justify-around md:items-center sm:flex-row">
         <NavBar>
           <Link
             className="flex gap-[10px] cursor-pointer absolute xl:left-4 lg:left-4 md:left-4 left-[30%] xl:top-auto lg:top-auto md:top-auto top-[15%]"
-            href="/"
+            href={containsWachts ? 'wachts' : '/'}
           >
             <ArrowBack />
             <p className="font-semibold">Regresar</p>
