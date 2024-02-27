@@ -2,9 +2,6 @@ import Menu from './menu'
 import { usePath } from '../../../hooks/usePath'
 import Link from 'next/link'
 const Nav = () => {
-  const { homePath } = usePath()
-  const a = (homePath = '/')
-
   return (
     <div className="pb-[30px]">
       <ul className="hidden md:flex justify-center gap-[30px] xl:flex lg:flex">
