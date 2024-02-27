@@ -39,6 +39,9 @@ const HomeCaruselProducts = () => {
     if (emblaApi) emblaApi.scrollNext()
   }, [emblaApi])
 
+  if (products.length === 0) {
+    return null
+  }
   return (
     <>
       <section className="overflow-hidden relative">

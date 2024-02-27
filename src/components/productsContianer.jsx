@@ -5,14 +5,19 @@ import { getDocs, collection } from 'firebase/firestore'
 import { db } from '../../firebase'
 import Lupa from './icons/lupa'
 import Loading from './ui/loading'
-const ProductContainer = () => {
+import Nav from './ui/nav'
+const ProductContainer = ({ filterProductsPage }) => {
   const [products, setProducts] = useState([])
   const [category, setCategory] = useState([])
-  const [selectedCategory, setSelectedCategory] = useState('') // Estado para rastrear la categoría seleccionada
+  const [selectedCategory, setSelectedCategory] = useState(
+    filterProductsPage || '',
+  ) // Estado para rastrear la categoría seleccionada
   const [searchValue, setSearchValue] = useState('')
   const [isLoading, setIsloading] = useState(false)
 
   const [filteredCategory, setFilteredCategory] = useState(null)
+  if (products.length === 0) {
+  }
   useEffect(() => {
     const fechtData = async () => {
       try {
@@ -31,18 +36,20 @@ const ProductContainer = () => {
           new Set(productData.map((products) => products.category)),
         )
         setCategory(uniqueCategories)
+
         setIsloading(true)
       } catch (error) {
         console.log(error)
       }
     }
     fechtData()
-  }, [])
+  }, [filterProductsPage])
   const handleCategoryChange = (event) => {
     const seletValue = event.target.value
     setSelectedCategory(seletValue)
     setFilteredCategory(seletValue)
   }
+
   const handleInputChange = (e) => {
     setSearchValue(e.target.value)
   }
@@ -62,21 +69,24 @@ const ProductContainer = () => {
   const filteredProducts = products.filter(filterProducts)
   return isLoading ? (
     <>
+      <Nav />
       <div className="relative flex justify-center mt-[30px]">
         <input
           type="text"
           placeholder="Search"
           className="w-[350px] xl:w-[400px] lg:w-[400px] md:w-[400px]   p-4"
           onChange={handleInputChange}
+          disabled={products.length === 0}
         />
         <Lupa />
       </div>
-      {searchValue !== '' && filteredProducts.length === 0 && (
-        <p>
-          No hay productos que coincidan con la búsqueda y categoría
-          seleccionadas.
-        </p>
-      )}
+      {(searchValue !== '' && filteredProducts.length === 0) ||
+        (products.length === 0 && (
+          <p className="text-[20px] text-center p-[10px] font-medium text-[#8d8d8d]">
+            No hay productos que coincidan con la búsqueda y categoría
+            seleccionadas o no hay disponibles en este momento.
+          </p>
+        ))}
 
       <section className="p-[30px]   mt-[50px] ">
         <div className="flex justify-center gap-[20px] items-start">

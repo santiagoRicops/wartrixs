@@ -13,14 +13,13 @@ const CardProduct = ({ products }) => {
   const [notification, setNotification] = useState(null)
   const partPath = usePath()
 
-
   const showNotification = (message) => {
     setNotification(message)
     setTimeout(() => {
       setNotification(null)
     }, 3000)
   }
-const a = partPath == '/' ? '/products' : partPath
+  const a = partPath == '/' ? '/products' : partPath
   return (
     <>
       <Alert notification={notification} />

@@ -13,14 +13,14 @@ export const metadata = {
 export default function Home() {
   return (
     <RootLayout>
-      <header className="p-[25px]  md:flex  md:justify-around md:items-center sm:flex-row">
-        <NavBar />
-      </header>
+      <NavBar />
+
       <Baner />
       <main className=" xl:p-0 lg:p-0 md:p-0  relative ">
         <MenuCategories />
-        {/* <ProductContainer />  */}
+
         <HomeCaruselProducts />
+        <ProductContainer />
       </main>
     </RootLayout>
   )

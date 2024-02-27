@@ -13,10 +13,11 @@ import ArrowBack from '@/components/icons/arrowBack'
 import Link from 'next/link'
 import Alert from '@/components/ui/notificacion'
 import ProductCarrusel from '@/components/ui/productCarrusel'
-import  {usePath}  from '../../../../hooks/usePath'
+import { usePath } from '../../../../hooks/usePath'
+import HomeCaruselProducts from '@/components/homeCaruselProducts'
 const DetailsProducts = () => {
   const partPath = usePath()
- 
+
   const OPTIONS = {} // Agrega opciones según sea necesario
   const SLIDE_COUNT = 3
   const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
@@ -52,10 +53,9 @@ const DetailsProducts = () => {
       setNotification(null)
     }, 3000)
   }
-  const containsWachts = partPath.toLowerCase().indexOf('wachts') !== -1;
+  const containsWachts = partPath.toLowerCase().indexOf('wachts') !== -1
 
-
-  console.log(containsWachts);
+  console.log(containsWachts)
   return isLoading ? (
     <>
       <header className="p-[25px]  md:flex  md:justify-around md:items-center sm:flex-row">
@@ -104,6 +104,7 @@ const DetailsProducts = () => {
           </div>
         </article>
       </section>
+      <HomeCaruselProducts />
     </>
   ) : (
     <Loading />

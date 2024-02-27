@@ -13,22 +13,7 @@ const Admin = () => {
           <Image src={logo} alt="logo wartix" />
         </figure>
       </header>
-      <nav>
-        <ul className="hidden md:flex justify-center gap-[30px] xl:flex lg:flex">
-          <li className="font-semibold text-[20px] cursor-pointer">
-            <a href="/">Inicio</a>
-          </li>
-          <li className="font-semibold text-[20px] cursor-pointer">Wachts</li>
-          <li className="font-semibold text-[20px] cursor-pointer">
-            Computadoras & tablets
-          </li>
-          <li className="font-semibold text-[20px] cursor-pointer">Movil</li>
-          <li className="font-semibold text-[20px] cursor-pointer">
-            Accesorios
-          </li>
-        </ul>
-        <Menu />
-      </nav>
+
       <FromAdmin />
     </>
   )
