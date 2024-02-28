@@ -16,8 +16,6 @@ import ProductCarrusel from '@/components/ui/productCarrusel'
 
 import HomeCaruselProducts from '@/components/homeCaruselProducts'
 const DetailsProducts = () => {
-
-
   const OPTIONS = {} // Agrega opciones según sea necesario
   const SLIDE_COUNT = 3
   const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
@@ -53,7 +51,7 @@ const DetailsProducts = () => {
       setNotification(null)
     }, 3000)
   }
-  
+
   return isLoading ? (
     <>
       <header className="p-[25px]  md:flex  md:justify-around md:items-center sm:flex-row">
