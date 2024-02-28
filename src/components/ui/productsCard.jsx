@@ -12,14 +12,13 @@ const CardProduct = ({ products }) => {
 
   const [notification, setNotification] = useState(null)
 
-
   const showNotification = (message) => {
     setNotification(message)
     setTimeout(() => {
       setNotification(null)
     }, 3000)
   }
- 
+
   return (
     <>
       <Alert notification={notification} />
