@@ -58,7 +58,7 @@ const DetailsProducts = () => {
         <NavBar>
           <Link
             className="flex gap-[10px] cursor-pointer absolute xl:left-4 lg:left-4 md:left-4 left-[30%] xl:top-auto lg:top-auto md:top-auto top-[15%]"
-            href={containsWachts ? 'wachts' : '/'}
+            href="/"
           >
             <ArrowBack />
             <p className="font-semibold">Regresar</p>
