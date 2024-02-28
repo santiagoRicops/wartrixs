@@ -80,11 +80,11 @@ const ProductContainer = ({ filterProductsPage }) => {
         />
         <Lupa />
       </div>
-      {(searchValue !== '' && filteredProducts.length === 0) ||
-        (products.length === 0 && (
+      {(products.length === 0 && filteredProducts.length === 0) ||
+        (searchValue !== '' && (
           <p className="text-[20px] text-center p-[10px] font-medium text-[#8d8d8d]">
             No hay productos que coincidan con la búsqueda y categoría
-            seleccionadas o no hay disponibles en este momento.
+            seleccionadas o No hay productos disponibles en este momento.
           </p>
         ))}
 
