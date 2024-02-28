@@ -1,7 +1,7 @@
 import ProductContainer from '@/components/productsContianer'
 
 import NavBar from '@/components/navBar'
-import A from './hola'
+
 
 const Relojes = () => {
   return (
@@ -9,7 +9,7 @@ const Relojes = () => {
       <NavBar />
 
       <ProductContainer filterProductsPage={'wachts'} />
-      <A />
+     
     </>
   )
 }
