@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 import { CartProvider } from '../../context/Cart'
 import { AccountProvider } from '../../context/Account'
-import { PathNameProvider } from '../../context/pathName'
+
 
 export const metadata = {
   title: 'Create Next App',
@@ -25,11 +25,11 @@ export default function RootLayout({ children }) {
       </head>
 
       <body className={inter.className}>
-        <PathNameProvider>
+      
           <AccountProvider>
             <CartProvider>{children}</CartProvider>
           </AccountProvider>
-        </PathNameProvider>
+        
       </body>
     </html>
   )
