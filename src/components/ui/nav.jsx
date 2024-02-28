@@ -5,11 +5,9 @@ const Nav = () => {
   return (
     <div className="pb-[30px]">
       <ul className="hidden md:flex justify-center gap-[30px] xl:flex lg:flex">
-        {homePath === '' && (
-          <li className="font-semibold text-[20px] cursor-pointer">
-            <Link href="/">Inicio</Link>
-          </li>
-        )}
+        <li className="font-semibold text-[20px] cursor-pointer">
+          <Link href="/">Inicio</Link>
+        </li>
 
         <li className="font-semibold text-[20px] cursor-pointer">
           {' '}

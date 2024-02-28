@@ -11,7 +11,6 @@ import Registerform from './formRegister'
 import AccountInfo from './accountUserInfo'
 import FormSignIn from './formSignIn'
 import { useAccount } from '../../hooks/useAccount'
-import Menu from './ui/menu'
 
 const NavBar = ({ children }) => {
   const [seeCart, setSeeCart] = useState(false)
