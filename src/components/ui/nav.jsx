@@ -1,5 +1,5 @@
 import Menu from './menu'
-import { usePath } from '../../../hooks/usePath'
+
 import Link from 'next/link'
 const Nav = () => {
   return (
