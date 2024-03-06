@@ -5,6 +5,7 @@ import RootLayout from './layout'
 import NavBar from '@/components/navBar'
 import MenuCategories from '@/components/ui/menuCategories'
 import HomeCaruselProducts from '@/components/homeCaruselProducts'
+import B from './bu'
 
 export const metadata = {
   title: 'Wartrix',
@@ -17,6 +18,7 @@ export default function Home() {
 
       <Baner />
       <main className=" xl:p-0 lg:p-0 md:p-0  relative ">
+        <B />
         <MenuCategories />
 
         <HomeCaruselProducts />

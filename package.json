@@ -11,11 +11,16 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@paypal/checkout-server-sdk": "^1.0.3",
+    "@paypal/react-paypal-js": "^8.1.4",
+    "dotenv": "^16.4.5",
     "embla-carousel-auto-scroll": "8.0.0-rc23",
     "embla-carousel-autoplay": "8.0.0-rc23",
     "embla-carousel-react": "8.0.0-rc22",
-    "firebase": "^10.8.0",
+    "express": "^4.18.3",
+    "firebase": "^10.8.1",
     "next": "14.1.0",
+    "node-fetch": "^3.3.2",
     "prettier": "^3.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -23,7 +28,7 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.17",
+    "autoprefixer": "^10.4.18",
     "eslint": "^8.57.0",
     "eslint-config-next": "14.1.0",
     "husky": "^9.0.11",
