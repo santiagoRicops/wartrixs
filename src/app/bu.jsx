@@ -5,7 +5,7 @@ const B = () => {
     <PayPalScriptProvider
       options={{
         clientId:
-          'AWNSyHHIQRLaz9yY7J1kQjqz2ieccedydKqNUuSqMG7Qr7Az5gcaiNWJE3l68udeHwhATvk9yjlIXa3Q',
+          'AQQGw8BpLvQqK2Ahb-4dK3bw0o17PkxmLZqiHzNwuNw4atFfpPT482gQ5tyS_QuXM0O4Jup5lUbr3-aC',
       }}
     >
       <PayPalButtons
