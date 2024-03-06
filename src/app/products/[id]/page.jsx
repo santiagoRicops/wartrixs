@@ -15,6 +15,7 @@ import Alert from '@/components/ui/notificacion'
 import ProductCarrusel from '@/components/ui/productCarrusel'
 
 import HomeCaruselProducts from '@/components/homeCaruselProducts'
+import PayPalButton from '@/components/ui/paypalButton'
 const DetailsProducts = () => {
   const OPTIONS = {} // Agrega opciones según sea necesario
   const SLIDE_COUNT = 3
@@ -94,9 +95,7 @@ const DetailsProducts = () => {
               }}
             />
 
-            <button className="bg-yellow-500 text-white py-2 px-4 rounded-md flex items-center justify-center hover:bg-yellow-600 transition duration-300 focus:outline-none">
-              Pagar Ahora
-            </button>
+           <PayPalButton idProdut={idPartPath}/>
           </div>
         </article>
       </section>

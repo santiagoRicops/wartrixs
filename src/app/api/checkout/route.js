@@ -1,10 +1,9 @@
 import paypal from '@paypal/checkout-server-sdk'
 import { NextResponse } from 'next/server'
 
-const clientId =
-  'AbOZleQ5SYIOnwsvxuycf1IFqz8K8ov3nhNE41KfeI0PuzZ_GryLB45B8MERzah3GxGvPmqlx2rLz3SE'
-const clientSecret =
-  'EIqQaq_iGd9yPrezdpW8RUZ_4br3Te2BjAcvwdrFNoMnG6wtbWbyb6B_2A7c-Sqyscz10l8bivhgpN2m'
+const clientId = process.env.PAYPAL_CLIENT_ID
+  
+const clientSecret = process.env.PAYPAL_SECRETCLIENT_ID
 
 const environment = new paypal.core.SandboxEnvironment(clientId, clientSecret)
 const client = new paypal.core.PayPalHttpClient(environment)
