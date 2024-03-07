@@ -72,7 +72,6 @@ const RegisterForm = ({ className, children, childrenP }) => {
 
   // Almacenar solo la información relevante en el localStorage
   console.log(shippingInfoString)
-  
 
   return (
     <>
