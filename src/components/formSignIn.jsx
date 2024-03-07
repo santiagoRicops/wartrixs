@@ -1,3 +1,4 @@
+'use client'
 import { provider, auth } from '../../firebase'
 import { signInWithPopup, signInWithEmailAndPassword } from 'firebase/auth'
 import { useState } from 'react'
