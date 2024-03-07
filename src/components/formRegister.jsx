@@ -73,7 +73,6 @@ const RegisterForm = ({ className, children, childrenP }) => {
   // Almacenar solo la información relevante en el localStorage
   localStorage.setItem('sendAddress', shippingInfoString)
 
-  // Mostrar solo la información relevante en la consola
 
   return (
     <>
