@@ -61,19 +61,18 @@ const RegisterForm = ({ className, children, childrenP }) => {
     }
   }
 
-  const shippingInfo = {
-    number: shippingData.number,
-    address: shippingData.address,
-    city: shippingData.city,
-  }
+    const shippingInfo = {
+      number: shippingData.number,
+      address: shippingData.address,
+      city: shippingData.city,
+    }
 
-  // Convertir el nuevo objeto a cadena JSON antes de guardarlo
-  const shippingInfoString = JSON.stringify(shippingInfo)
+    // Convertir el nuevo objeto a cadena JSON antes de guardarlo
+    const shippingInfoString = JSON.stringify(shippingInfo)
 
-  // Almacenar solo la información relevante en el localStorage
-  localStorage.setItem('sendAddress', shippingInfoString)
-
-
+    // Almacenar solo la información relevante en el localStorage
+    localStorage.setItem('sendAddress', shippingInfoString)
+  
   return (
     <>
       <Alert notification={notification} />
