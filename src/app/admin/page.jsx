@@ -1,6 +1,5 @@
 import '../globals.css'
 
-
 import Image from 'next/image'
 import logo from '../../../public/wartix.webp'
 import FromAdmin from '../../components/formAdmin'

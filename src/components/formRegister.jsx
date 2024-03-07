@@ -52,7 +52,7 @@ const RegisterForm = ({ className, children, childrenP }) => {
       const { email, password, name } = registerEmail
       //usar el localstorade para gaurar el nombre y usarlo luego
       localStorage.setItem('nameUser', name)
-
+      localStorage.setItem('sendAddress', shippingInfoString)
       await createUserWithEmailAndPassword(auth, email, password)
       showNotification('registrado con exito')
       setAccountInfo(name)
@@ -72,7 +72,7 @@ const RegisterForm = ({ className, children, childrenP }) => {
 
   // Almacenar solo la información relevante en el localStorage
   console.log(shippingInfoString)
-  localStorage.setItem('sendAddress', shippingInfoString)
+  
 
   return (
     <>
