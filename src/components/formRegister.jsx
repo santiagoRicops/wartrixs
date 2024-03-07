@@ -71,6 +71,7 @@ const RegisterForm = ({ className, children, childrenP }) => {
   const shippingInfoString = JSON.stringify(shippingInfo)
 
   // Almacenar solo la información relevante en el localStorage
+  console.log(shippingInfoString)
   localStorage.setItem('sendAddress', shippingInfoString)
 
   return (
