@@ -1,5 +1,5 @@
 import '../globals.css'
-import Menu from '../../components/ui/menu'
+
 
 import Image from 'next/image'
 import logo from '../../../public/wartix.webp'
