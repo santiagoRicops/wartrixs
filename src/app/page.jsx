@@ -5,7 +5,7 @@ import RootLayout from './layout'
 import NavBar from '@/components/navBar'
 import MenuCategories from '@/components/ui/menuCategories'
 import HomeCaruselProducts from '@/components/homeCaruselProducts'
-import B from '../components/ui/paypalButton'
+
 
 export const metadata = {
   title: 'Wartrix',
