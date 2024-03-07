@@ -12,7 +12,7 @@ export const AccountProvider = ({ children }) => {
   const [userData, setUserData] = useState('')
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
+    const localData = onAuthStateChanged(auth, (user) => {
       if (user) {
         const storedData = localStorage.getItem('nameUser')
         const sendAddress = localStorage.getItem('sendAddress')
@@ -23,7 +23,7 @@ export const AccountProvider = ({ children }) => {
       }
     })
 
-    return () => unsubscribe()
+    return () => localData()
   }, [])
 
   const SignOff = async () => {
@@ -31,9 +31,9 @@ export const AccountProvider = ({ children }) => {
       await auth.signOut()
       //   localStorage.removeItem('nameUser')
       setUserData(null)
-      setMyData('')
     } catch (error) {}
   }
+  console.log(sendAddress)
   return (
     <AccountContext.Provider value={{ userData, myData, SignOff, sendAddress }}>
       {children}

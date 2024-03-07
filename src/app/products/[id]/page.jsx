@@ -95,7 +95,7 @@ const DetailsProducts = () => {
               }}
             />
 
-           <PayPalButton idProdut={idPartPath}/>
+            <PayPalButton idProdut={idPartPath} />
           </div>
         </article>
       </section>

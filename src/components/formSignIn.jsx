@@ -3,8 +3,10 @@ import { signInWithPopup, signInWithEmailAndPassword } from 'firebase/auth'
 import { useState } from 'react'
 import GoogleIcon from './icons/google'
 import Alert from './ui/notificacion'
+import { useAccount } from '../../hooks/useAccount'
 const FormSignIn = ({ className, children, childrenP, onClick }) => {
   const [notification, setNotification] = useState(null)
+  const { sendAddress, userData, myData } = useAccount()
   const [loginEmail, setLoginEmail] = useState({
     email: '',
     password: '',
@@ -41,6 +43,7 @@ const FormSignIn = ({ className, children, childrenP, onClick }) => {
       setNotification(null)
     }, 3000)
   }
+
   return (
     <>
       <Alert notification={notification} />

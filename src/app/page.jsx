@@ -18,7 +18,6 @@ export default function Home() {
 
       <Baner />
       <main className=" xl:p-0 lg:p-0 md:p-0  relative ">
-      
         <MenuCategories />
 
         <HomeCaruselProducts />

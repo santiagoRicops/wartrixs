@@ -26,7 +26,12 @@ const RegisterForm = ({ className, children, childrenP }) => {
     setRegisterEmail((prev) => ({ ...prev, [name]: value }))
     setShippingData((prev) => ({ ...prev, [name]: value }))
   }
-
+  const showNotification = (message) => {
+    setNotification(message)
+    setTimeout(() => {
+      setNotification(null)
+    }, 3000)
+  }
   const registerUserGoogle = async (e) => {
     try {
       e.preventDefault()
@@ -55,26 +60,22 @@ const RegisterForm = ({ className, children, childrenP }) => {
       showNotification('no se ha podido registrar')
     }
   }
-  const showNotification = (message) => {
-    setNotification(message)
-    setTimeout(() => {
-      setNotification(null)
-    }, 3000)
-    const shippingInfo = {
-      number: shippingData.number,
-      address: shippingData.address,
-      city: shippingData.city,
-    }
 
-    // Convertir el nuevo objeto a cadena JSON antes de guardarlo
-    const shippingInfoString = JSON.stringify(shippingInfo)
-
-    // Almacenar solo la información relevante en el localStorage
-    localStorage.setItem('sendAddress', shippingInfoString)
-
-    // Mostrar solo la información relevante en la consola
-    console.log(JSON.parse(localStorage.getItem('sendAddress')))
+  const shippingInfo = {
+    number: shippingData.number,
+    address: shippingData.address,
+    city: shippingData.city,
   }
+
+  // Convertir el nuevo objeto a cadena JSON antes de guardarlo
+  const shippingInfoString = JSON.stringify(shippingInfo)
+
+  // Almacenar solo la información relevante en el localStorage
+  localStorage.setItem('sendAddress', shippingInfoString)
+
+  // Mostrar solo la información relevante en la consola
+  console.log(JSON.parse(localStorage.getItem('sendAddress')))
+
   return (
     <>
       <Alert notification={notification} />
