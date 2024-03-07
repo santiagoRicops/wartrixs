@@ -31,7 +31,6 @@ export const AccountProvider = ({ children }) => {
       await auth.signOut()
       //   localStorage.removeItem('nameUser')
       setUserData(null)
-      myData('')
     } catch (error) {}
   }
   console.log(sendAddress)
