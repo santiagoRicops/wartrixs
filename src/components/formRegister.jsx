@@ -74,7 +74,6 @@ const RegisterForm = ({ className, children, childrenP }) => {
   localStorage.setItem('sendAddress', shippingInfoString)
 
   // Mostrar solo la información relevante en la consola
-  console.log(JSON.parse(localStorage.getItem('sendAddress')))
 
   return (
     <>

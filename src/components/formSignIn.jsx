@@ -6,7 +6,7 @@ import Alert from './ui/notificacion'
 import { useAccount } from '../../hooks/useAccount'
 const FormSignIn = ({ className, children, childrenP, onClick }) => {
   const [notification, setNotification] = useState(null)
-  const { sendAddress, userData, myData } = useAccount()
+
   const [loginEmail, setLoginEmail] = useState({
     email: '',
     password: '',
