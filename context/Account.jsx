@@ -23,7 +23,7 @@ export const AccountProvider = ({ children }) => {
       }
     })
 
-    return  localData()
+    return () => localData()
   }, [])
 
   const SignOff = async () => {
