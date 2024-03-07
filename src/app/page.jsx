@@ -6,7 +6,6 @@ import NavBar from '@/components/navBar'
 import MenuCategories from '@/components/ui/menuCategories'
 import HomeCaruselProducts from '@/components/homeCaruselProducts'
 
-
 export const metadata = {
   title: 'Wartrix',
   description: 'Principal',

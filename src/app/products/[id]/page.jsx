@@ -15,7 +15,7 @@ import Alert from '@/components/ui/notificacion'
 import ProductCarrusel from '@/components/ui/productCarrusel'
 
 import HomeCaruselProducts from '@/components/homeCaruselProducts'
-import PayPalButton from '@/components/ui/paypalButton'
+// import PayPalButton from '@/components/ui/paypalButton'
 const DetailsProducts = () => {
   const OPTIONS = {} // Agrega opciones según sea necesario
   const SLIDE_COUNT = 3
@@ -95,7 +95,7 @@ const DetailsProducts = () => {
               }}
             />
 
-            <PayPalButton idProdut={idPartPath} />
+            {/* <PayPalButton idProdut={idPartPath} /> */}
           </div>
         </article>
       </section>
